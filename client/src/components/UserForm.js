@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"; 
 import axios from "axios"; 
-// import * as  Yup from "yup";
+import * as  Yup from "yup";
 import { Form, Field, withFormik } from "formik"; 
 
 const UserForm = ({errors, touched, values, status}) => {
@@ -19,7 +19,13 @@ useEffect(() => {
     <Form> 
         <div>
             <Field type="text" name="name" placeholder="Name" />
+            {touched.name && errors.name && (
+                <p className="error"> { errors.name }  </p>
+            )}
             <Field type="password" name="password" placeholder="Password" />
+            {touched.password && errors.password && (
+                <p className="error"> { errors.password }  </p>
+            )}
          </div> 
          <button type='submit'>Submit</button>
      </Form> 
@@ -43,6 +49,14 @@ const FormikUserForm = withFormik({
           password: password || ""  
         }
     }, 
+
+
+    validationSchema: Yup.object().shape({
+        name: Yup.string().required("Input Info Here"), 
+        password: Yup.string().required("Input Info Here")
+    }), 
+
+
 
     handleSubmit(values, { resetForm ,setErrors, setStatus }) {
         if(values.name === "this is my name") {
