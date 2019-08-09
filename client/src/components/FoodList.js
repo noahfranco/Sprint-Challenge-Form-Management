@@ -10,7 +10,7 @@ const FoodList = () => {
         .get("http://localhost:5000/api/restricted/data")
         .then(set => {
             console.log(set)
-            setFood(set.ingredients)
+            setFood(set.data)
         })
         .catch(error => {
             console.log("ERROR", error)
@@ -20,7 +20,9 @@ const FoodList = () => {
 
     return(
         <div> 
-            { food }
+            {food.map(res => (
+                <p key={res.id}> { res.name }  </p> 
+            ))}
         </div> 
     )
 
