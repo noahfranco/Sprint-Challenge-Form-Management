@@ -10,7 +10,7 @@ const FoodList = () => {
         .get("http://localhost:5000/api/restricted/data")
         .then(set => {
             console.log(set)
-            setFood(set.data)
+            setFood(set.ingredients)
         })
         .catch(error => {
             console.log("ERROR", error)

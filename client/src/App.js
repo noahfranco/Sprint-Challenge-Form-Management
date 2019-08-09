@@ -14,9 +14,10 @@ render() {
     <div className="App">
       <div> This is a Happy Place </div> 
       <UserForm /> 
-      {FoodList.map(rest => (
+      {/* {FoodList.map(rest => (
         <FoodList key={rest.id} rest={rest} /> 
-      ))}
+      ))} */}
+      <FoodList /> 
       
     </div>
   );
