@@ -45,10 +45,9 @@ useEffect(() => {
          <button type='submit'>Submit</button>
      </Form> 
     {users.map(user => (
-    <div key={user}> 
+    <div key={user.id}> 
         <p>
-            Name: { user.name }
-            Email: { user.password }     
+            You are now registered { user.name }
         </p> 
     </div> 
     ))}
@@ -78,7 +77,7 @@ const FormikUserForm = withFormik({
             setErrors({name: "That name is taken"})
         } else {
             axios 
-            .post("http://localhost:5000/api/register", values)
+            .post("https://reqres.in/api/users", values)
             .then(res => {
                 console.log(res);
                 setStatus(res.data);

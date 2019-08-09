@@ -23,7 +23,7 @@ describe("<App />", () => {
 // it("the submit button works", () => { 
 // const button = redner(<UserForm />); 
 
-// button.
+// button.getbyEvent()
 // })
 })
 
