@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import UserForm from './components/UserForm';
+import FoodList from './components/FoodList';
 
 class App extends React.Component {
   constructor() {
@@ -13,6 +14,10 @@ render() {
     <div className="App">
       <div> This is a Happy Place </div> 
       <UserForm /> 
+      {FoodList.map(rest => (
+        <FoodList key={rest.id} rest={rest} /> 
+      ))}
+      
     </div>
   );
 }
