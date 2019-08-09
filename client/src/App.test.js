@@ -18,12 +18,7 @@ describe("<App />", () => {
 
     app.getByText(/This is a Happy Place/i)
   })
-
-// // event test 
-// it("the submit button works", () => { 
-// const button = redner(<UserForm />); 
-
-// button.getbyEvent()
-// })
 })
+
+
 
